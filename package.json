@@ -1,0 +1,26 @@
+{
+  "name": "real-time-app",
+  "author": "Daniil",
+  "description": "Real time app node.js based.",
+  "version": "0.0.1",
+  "devDependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.14.1",
+    "express": "^4.13.3",
+    "grunt": "^0.4.5",
+    "gulp-concat-css": "^2.2.0",
+    "gulp-rename": "^1.2.2",
+    "mongoose": "^4.3.1",
+    "morgan": "^1.6.1"
+  },
+  "main": "server.js",
+  "dependencies": {
+    "grunt": "^0.4.5",
+    "gulp-concat-css": "^2.2.0",
+    "gulp-rename": "^1.2.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "ISC"
+}

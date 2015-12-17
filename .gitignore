@@ -1,0 +1,11 @@
+### Example user template template
+### Example user template
+
+# IntelliJ project files
+node_modules
+public/bower_components
+.idea
+*.iml
+out
+gen
+# Created by .ignore support plugin (hsz.mobi)
