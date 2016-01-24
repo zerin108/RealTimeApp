@@ -21,10 +21,7 @@ angular.module('authService', [])
         };
 
         authFactory.isLoggedIn = function () {
-            if(AuthToken.getToken())
-            return true;
-            else
-            return false;
+            return !!AuthToken.getToken();
         };
         
         authFactory.getUSer = function () {
@@ -34,20 +31,47 @@ angular.module('authService', [])
                 return $q.reject({
                     message: "User has no token"
                 })
-        }
+        };
+
+        return authFactory;
         
     })
     .factory('AuthToken', function($window){
-        var authFactory = {};
+        var authTokenFactory = {};
 
-        authFactory.getToken = function(){
+        authTokenFactory.getToken = function(){
             return $window.localStorage.getItem('token');
         };
 
-        authFactory.setToken = function(){
+        authTokenFactory.setToken = function(){
             if(token)
                 $window.localStorage.setItem('token', token);
             else
                 $window.localStorage.removeItem('token');
+        };
+
+        return authTokenFactory;
+    })
+    .factory('AuthInterceptor', function($q, $location, AuthToken){
+        var interceptorFactory = {};
+
+        interceptorFactory.request = function (config) {
+            var token = AuthToken.getToken();
+
+            if(token){
+                config.headers['x-access-token'] = token;
+            }
+
+            return config;
+        };
+
+        interceptorFactory.responseError = function(response){
+            if(response.status == 403){
+                $location.path('/login');
+            }
+
+            return $q.reject(response);
         }
+
+        return interceptorFactory;
     });
