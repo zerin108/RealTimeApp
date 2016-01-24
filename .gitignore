@@ -3,7 +3,7 @@
 
 # IntelliJ project files
 node_modules
-public/bower_components
+public/app/bower_components
 .idea
 *.iml
 out

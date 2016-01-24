@@ -10,6 +10,7 @@
     "grunt": "^0.4.5",
     "gulp-concat-css": "^2.2.0",
     "gulp-rename": "^1.2.2",
+    "jsonwebtoken": "^5.5.4",
     "mongoose": "^4.3.1",
     "morgan": "^1.6.1"
   },

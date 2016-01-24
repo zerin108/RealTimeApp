@@ -22,12 +22,14 @@ app.use(bodyParser.urlencoded({extended : true}));
 app.use(bodyParser.json());
 app.use(morgan('dev'));
 
+app.use(express.static(__dirname + "/public"));
+
 //connect api
 var api = require('./app/routes/api')(app, express);
 app.use('/api', api);//for signup, as example, must type localhost:3000/api/signup
 
 app.get('*', function(req, res){
-    res.sendFile(__dirname + '/public/views/index.html');
+    res.sendFile(__dirname + '/public/app/views/index.html');
 
 });
 
