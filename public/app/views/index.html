@@ -1,17 +1,21 @@
 <!doctype html>
 <html lang="en" ng-app="myApp">
 <head>
+    <base href="/">
     <meta charset="UTF-8">
     <title>User Story</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
-    <script src="../bower_components/angular/angular.min.js"></script>
-    <script src="../bower_components/angular-route/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.1/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/2.0.0-beta.1/router.js"></script>
+    <script src="services/authService.js"></script>
+    <script src="app.routes.js"></script>
+    <script src="controllers/mainController.js"></script>
 
 </head>
 <body class="container">
-<h1 class="text-center">Hello, user story</h1>
+<div class="container-fluid" ng-view="">
 
-<p>2 + 2 = {{2+2}} </p>
+</div>
 
 <script src="app.js"></script>
 </body>
