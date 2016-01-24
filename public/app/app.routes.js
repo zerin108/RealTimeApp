@@ -7,4 +7,9 @@ angular.module('appRoutes', ['ngRoute'])
             .when('/', {
                 templateUrl: 'app/views/pages/home.html'
             })
+            .when('/login', {
+                templateUrl: 'views/pages/login.html'
+            })
+
+        $locationProvider.html5Mode(true);
     });
